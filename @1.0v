@@ -1,0 +1,1 @@
+const route=t=>{(t=t||window.event).preventDefault(),window.history.pushState({},"",t.target.href),handleLocation()},handleLocation=async()=>{let t=window.location.pathname,e=routes[t]||routes[404],n=await fetch(e).then(t=>t.text());document.getElementById("root").innerHTML=n,initReactiveSystem()};window.onpopstate=handleLocation,window.route=route,handleLocation();
